@@ -1,0 +1,118 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+#large-viewport{
+}
+.back-img{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: -2;
+}
+.back-img:nth-child(2){
+	top:100%;
+}
+.back-img:nth-child(3){
+	left:100%;
+}
+.back-img:nth-child(4){
+	left:100%;
+	top: 100%;
+}
+.back-img:nth-child(5){
+	left:200%;
+}
+.back-img:nth-child(6){
+	left:200%;
+	top: 100%;
+}
+.back-img:nth-child(7){
+	top: 200%;
+}
+.back-img:nth-child(8){
+	left:100%;
+	top: 200%;
+}
+.back-img:nth-child(9){
+	left:200%;
+	top: 200%;
+}
+.land{
+	transition: fill .3s linear;
+	width: 200px;
+	height: 200px;
+	border: 1px solid white;
+	z-index: 10;
+	position: absolute;
+	fill: black;
+}
+.land:hover{
+	fill: white;
+	z-index: 100;
+	cursor: pointer;
+}
+#overlaidCanvas{
+	position: absolute;
+	height: 300%;
+	width: 300%;
+	position: absolute;
+	background-color: black;
+	opacity: .95;
+	z-index: -1;
+}
+
+
+
+
+
+
+
+
+
+
+
