@@ -1,4 +1,4 @@
-// window.scrollTo(window.innerWidth,window.innerHeight);
+window.scrollTo(window.innerWidth,window.innerHeight);
 var c=document.getElementById("overlaidCanvas");
 c.width = window.innerWidth*3;
 c.height = window.innerHeight*3;
@@ -19,6 +19,7 @@ var drawLine = function(svg1,svg2){
 	ctx.stroke();
 }
 var svgs = document.getElementsByTagName('svg');
+var h1s = document.getElementsByTagName('h1');
 var placeSvgs = function(){
 	var maxLandWidth = 640;
 	var maxLandHeight = 480;
@@ -33,6 +34,12 @@ var placeSvgs = function(){
   	}
 	var blockWidth = Math.floor((3*window.innerWidth)/numWidths);
 	var blockHeight = Math.floor((3*window.innerHeight)/numHeights);
+	var midx = Math.floor(numWidths/2);
+	var midy = Math.floor(numHeights/2);
+	var midxc = Math.ceil(numWidths/2);
+	var midyc = Math.ceil(numHeights/2);
+	usedArr[midx][midy] = true;
+	usedArr[midxc][midyc] = true;
 	for (var i = 0; i < svgs.length; i++) {
 		svgs[i].style.position = "absolute";
 		var rx = Math.floor(Math.random() * numWidths );
@@ -40,6 +47,8 @@ var placeSvgs = function(){
 		if(usedArr[rx][ry]==false){
 			svgs[i].style.left = rx*blockWidth;
 			svgs[i].style.top = ry*blockHeight;
+			h1s[i].style.left = (rx*blockWidth)-(h1s[i].style.width);
+			h1s[i].style.top = (ry*blockHeight)-(h1s[i].style.height);
 			usedArr[rx][ry] = true;
 		}
 	};
@@ -50,5 +59,8 @@ var placeSvgs = function(){
 			}
 		};
 	};
+	var h2 = document.getElementsByTagName('h2');
+	h2[0].style.left = ((3*window.innerWidth)/2) + (h2[0].style.width);
+	h2[0].style.top = ((3*window.innerHeight)/2) + (h2[0].style.height);
 }
 placeSvgs();
